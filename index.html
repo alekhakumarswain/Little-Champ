@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Little Champ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      :root {
+    --color1: #0f1111;
+    --color2: #00FFFF;
+    --color3: #4a3a27;
+    --color4:#4afa27
+}
+      * {
+        box-sizing: border-box;
+        }
+      body {
+        margin: 0;
+        font-family: Arial;
+        background-color: var(--color2);
+        font-size: 17px;
+        }
+      #myVideo {
+        object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.viewport-header {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#start{
+  display: block;
+}
+h1 {
+  font-family: 'Syncopate', sans-serif;
+  color: #4a3a27;
+  text-transform: uppercase;
+  letter-spacing: 0.6vw;
+  line-height: 1.2;
+  font-size: 5vw;
+  font-weight: bold;
+  text-align: center;
+  span {
+    display: block;
+    font-size: 15vw;
+    padding: 0.55em;
+    border-radius: 50%;
+    border: 0.15em solid var(--color1);
+    background-color:rgba(55,145,177,0.5);
+    color: var(--color3);
+    font-weight: bold;
+    text-shadow: 2px 2px 10px var(--color2),
+                -2px -2px 10px  var(--color2);
+    box-shadow: 0 0 25px 3px var(--color4),
+                inset 0 0 15px 3px var(--color1);
+  }
+}
+
+.progress {
+   width: 80%;
+   height: 26.4px;
+   display: none;
+   border-radius: 50px;
+   background: repeating-linear-gradient(135deg,#528f1d 0 13.2px,rgba(82,143,29,0.75) 0 26.4px) left/0%   100% no-repeat,
+         repeating-linear-gradient(135deg,rgba(82,143,29,0.2) 0
+         13.2px,rgba(82,143,29,0.5) 0 26.4px) left/100% 100%;
+   animation: progress-p43u5e 15s infinite;
+}
+
+@keyframes progress-p43u5e {
+   100% {
+      background-size: 100% 100%;
+   }
+}
+</style>
+    
+  </head>
+  <body onload="come()">
+    <video autoplay muted loop id="myVideo">
+      <source src="welcomebg.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <header class="viewport-header">
+      <div id="start">
+  <h1>
+    WELCOME 
+    <span onclick="Next()">
+      <i class="fa-solid fa-circle-play"></i>
+    </span>
+  </h1>
+  </div>
+  <div id="load" class="progress"></div>
+
+
+</header>
+<audio controls loop style="display:none;"
+       id="seve" src="littlechampwelcomebg.mp3">
+  <script>
+function come() {
+    window.addEventListener("mouseover",play);
+    window.addEventListener("click",play);
+function play() {
+    document.getElementById("seve").play();
+}
+}
+function Next() {
+  document.getElementById("start").style.display = "none";
+  document.getElementById("load").style.display = "block";
+
+  setTimeout(function () {
+    window.location.href = "home.html";
+  }, 15000); // 15 seconds in milliseconds
+}
+
+  </script>
+  </body>
+</html>
